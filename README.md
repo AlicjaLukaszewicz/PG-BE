@@ -15,10 +15,12 @@ Aktualnie wykorzystujemy najnowszą stabilną wersję Prestashop 1.7.8.
 - Dominik Noga 
 
 ## Instrukcja instalacji
-1. Pobierz plik `docker-compose.yml` do dowolnego folderu na Windows.
+1. Pobierz plik `docker-compose.yml` do dowolnego folderu na systemie Windows.
 2. Upewnij się, że masz WSL skonfigurowane z Docker Desktop.
 3. Pobierz plik bazy danych `.sql` znajdujący się w folderze Database.
-4. Uruchom Docker Compose.
-5. Zaloguj się do phpMyAdmin na porcie 8081 z nazwą użytkownika: [root] i hasłem: [prestashop].
-6. Kliknij na bazę danych Prestashop po lewej stronie.
-7. Następnie zaimportuj dane wcześniej pobrane z repozytorium.
+4. Przy pomocy terminala wejdź do folderu zawierającego `docker-compose.yml`.
+5. Uruchom Docker Compose przy użyciu komendy `docker compose up`.
+6. Poczekaj, aż sklep się załaduje - może to chwilę potrwać.
+7. Zaloguj się do strony phpMyAdmin na porcie 8081 z nazwą użytkownika: [root] i hasłem: [prestashop].
+8. Kliknij na bazę danych Prestashop po lewej stronie.
+9. Następnie zaimportuj dane wcześniej pobrane z repozytorium.
