@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 class SearchAndAddHandler:
     def __init__(self, driver: WebDriver):
         self._driver = driver
-        self.SEARCHED_VALUE = "Mug"
+        self.SEARCHED_VALUE = "puszysty"
     
     def _search_for_mug(self):
         search_input = self._driver.find_element(By.NAME, "s")

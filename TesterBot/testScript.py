@@ -53,4 +53,3 @@ def main():
     dvih.download_invoice()
     
 main()
-    
