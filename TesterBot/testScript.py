@@ -6,6 +6,7 @@ from cardAddingHandler import CardAddingHandler
 from accountCreator import AccountCreator
 from removeFromOrderHandler import RemoveFromOrderHandler
 from createdOrderHandler import CreatedOrderHandler
+from searchAndAddHandler import SearchAndAddHandler
 import time
 
 options = Options()
@@ -27,14 +28,16 @@ cah = CardAddingHandler(driver)
 ac = AccountCreator(driver)
 rfoh = RemoveFromOrderHandler(driver)
 coh = CreatedOrderHandler(driver)
+saah = SearchAndAddHandler(driver)
 def main():
     launch_shop()
-    ac.register_account()
-    cah.add_random_products_to_card()
-    time.sleep(6)
-    rfoh.remove_rand_products()
-    time.sleep(4)
-    coh.create_order()
+    saah.search_and_add_random_product()
+    # ac.register_account()
+    # cah.add_random_products_to_card()
+    # time.sleep(6)
+    # rfoh.remove_rand_products()
+    # time.sleep(4)
+    # coh.create_order()
     
 main()
     

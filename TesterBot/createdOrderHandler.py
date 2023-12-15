@@ -61,7 +61,7 @@ class CreatedOrderHandler:
         self._confirm_delivery_option()
     
     def _choose_payment_method_and_make_order(self):
-        payment_opt_container = self._driver.find_element(By.ID, "payment-option-2-container")
+        payment_opt_container = self._driver.find_element(By.CLASS_NAME, "payment-options")
         radio_btns = payment_opt_container.find_elements(By.CLASS_NAME, "custom-radio")
         radio_btns[1].click() # wire-transfer
         condition_cbox = self._driver.find_element(By.ID, "conditions_to_approve[terms-and-conditions]")

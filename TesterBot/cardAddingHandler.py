@@ -51,16 +51,14 @@ class CardAddingHandler():
             return
 
         if self.added_products_length >= self.TARGET_PRODUCTS_QUANTITY:
-            go_to_card_btn = btn_div.find_element(By.CLASS_NAME, "btn-primary")
-            time.sleep(3)
-            go_to_card_btn.click()
+            return
         else:
             continue_btn = btn_div.find_element(By.TAG_NAME, "button")
             time.sleep(3)
             continue_btn.click()
             self.go_to_current_category()
 
-    def get_random_products_indexes(self, products):
+    def _get_random_products_indexes(self, products):
         products_quantity = len(products)
         max_number_to_add = min(self.TARGET_PRODUCTS_QUANTITY - self.added_products_length, products_quantity)
         products_to_add = random.randint(1, max_number_to_add)
@@ -74,7 +72,7 @@ class CardAddingHandler():
         if self.added_products_length >= self.TARGET_PRODUCTS_QUANTITY:
             return
 
-        random_products_indexes = self.get_random_products_indexes(products)
+        random_products_indexes = self._get_random_products_indexes(products)
 
         for index in random_products_indexes:
             products = self.driver.find_elements(By.CLASS_NAME, "product-title")
