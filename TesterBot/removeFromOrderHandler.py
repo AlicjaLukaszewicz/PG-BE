@@ -1,9 +1,7 @@
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webdriver import WebDriver
 import random
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+import time
 
 class RemoveFromOrderHandler:
     def __init__(self, driver: WebDriver):
@@ -18,4 +16,5 @@ class RemoveFromOrderHandler:
             card_elements = self._driver.find_elements(By.CLASS_NAME, "cart-item")
             delete_btn = card_elements[item_index].find_element(By.CLASS_NAME, "remove-from-cart")
             delete_btn.click()
+            time.sleep(1)
         

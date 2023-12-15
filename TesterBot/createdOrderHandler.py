@@ -72,7 +72,12 @@ class CreatedOrderHandler:
         create_order_btn = create_order_div.find_element(By.TAG_NAME, "button")
         create_order_btn.click()
         
+    def _go_to_card(self):
+        div = self._driver.find_element(By.ID, "_desktop_cart")
+        div.find_element(By.TAG_NAME, "a").click()
+                
     def create_order(self):
+        self._go_to_card()
         self._click_finalize_order()
         self._fill_in_address_form()
         self._choose_random_delivery_option()

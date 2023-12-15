@@ -49,14 +49,13 @@ class CardAddingHandler():
         except Exception as e:
             print(f"Unexpected Error: {e}")
             return
-
+    
+        continue_btn = btn_div.find_element(By.TAG_NAME, "button")
+        time.sleep(3)
+        continue_btn.click()
+        self.go_to_current_category()
         if self.added_products_length >= self.TARGET_PRODUCTS_QUANTITY:
             return
-        else:
-            continue_btn = btn_div.find_element(By.TAG_NAME, "button")
-            time.sleep(3)
-            continue_btn.click()
-            self.go_to_current_category()
 
     def _get_random_products_indexes(self, products):
         products_quantity = len(products)

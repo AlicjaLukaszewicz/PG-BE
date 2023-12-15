@@ -7,6 +7,8 @@ from accountCreator import AccountCreator
 from removeFromOrderHandler import RemoveFromOrderHandler
 from createdOrderHandler import CreatedOrderHandler
 from searchAndAddHandler import SearchAndAddHandler
+from checkOrderStatusHandler import CheckOrderStatusHandler
+from downloadVatInvoiceHandler import DownloadVatInvoiceHandler
 import time
 
 options = Options()
@@ -29,15 +31,23 @@ ac = AccountCreator(driver)
 rfoh = RemoveFromOrderHandler(driver)
 coh = CreatedOrderHandler(driver)
 saah = SearchAndAddHandler(driver)
+cosh = CheckOrderStatusHandler(driver)
+dvih = DownloadVatInvoiceHandler(driver)
 def main():
     launch_shop()
+    cah.add_random_products_to_card()
+    time.sleep(3)
     saah.search_and_add_random_product()
-    # ac.register_account()
-    # cah.add_random_products_to_card()
-    # time.sleep(6)
-    # rfoh.remove_rand_products()
-    # time.sleep(4)
-    # coh.create_order()
+    time.sleep(3)
+    rfoh.remove_rand_products()
+    time.sleep(3)
+    ac.register_account()
+    time.sleep(3)
+    coh.create_order()
+    time.sleep(3)
+    cosh.see_details()
+    time.sleep(3)
+    # dvih.download_invoice
     
 main()
     
