@@ -13,6 +13,9 @@ import time
 
 options = Options()
 options.add_experimental_option("detach", True)
+options.add_argument("--ignore-ssl-error=yes")
+options.add_argument("--ignore-certificate-errors")
+
 driver = webdriver.Chrome(options=options, service=Service(ChromeDriverManager().install()))
 
 
@@ -47,7 +50,7 @@ def main():
     time.sleep(3)
     cosh.see_details()
     time.sleep(3)
-    # dvih.download_invoice
+    dvih.download_invoice()
     
 main()
     

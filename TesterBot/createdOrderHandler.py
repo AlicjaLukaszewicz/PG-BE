@@ -63,7 +63,7 @@ class CreatedOrderHandler:
     def _choose_payment_method_and_make_order(self):
         payment_opt_container = self._driver.find_element(By.CLASS_NAME, "payment-options")
         radio_btns = payment_opt_container.find_elements(By.CLASS_NAME, "custom-radio")
-        radio_btns[1].click() # wire-transfer
+        radio_btns[2].click() # gotowka
         condition_cbox = self._driver.find_element(By.ID, "conditions_to_approve[terms-and-conditions]")
         time.sleep(2)
         condition_cbox.click()
